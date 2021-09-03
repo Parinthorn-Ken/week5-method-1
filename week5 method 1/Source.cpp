@@ -1,14 +1,16 @@
 #define _CRT_SECURE_NO_WARNINGS 1 
 #include<stdio.h>
-void factorial(int x);
+int factorial(int x);
 int main() {
-	int x;
-	printf("enter the number : ");
+	int x,y;
+	printf("enter positive number : ");
 	scanf("%d", &x);
-	factorial(x);
+	y = x;
+	x=factorial(x);
+	printf("Factorial of %d = %d", y,x);
 	return 0;
 }
-void factorial(int x) {
+int factorial(int x) {
 	int y;
 	y = x;
 	for (; x > 1; )
@@ -16,5 +18,5 @@ void factorial(int x) {
 		x = x - 1;
 		y = y * x;
 	}
-	printf("Factorial = %d", y);
+	return y;
 }
